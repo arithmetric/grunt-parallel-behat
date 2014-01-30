@@ -35,7 +35,8 @@ function GruntTask (grunt) {
             options.files = files;
             options.done = done;
             options.executor = executor;
-            options.log = grunt.log.writeln;
+            options.log = grunt.log;
+            options.fail = grunt.fail;
 
             behat = new BehatTask(options);
             behat.run();
